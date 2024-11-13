@@ -6,12 +6,16 @@
 /*   By: vhacman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:11:12 by vhacman           #+#    #+#             */
-/*   Updated: 2024/11/12 17:59:27 by vhacman          ###   ########.fr       */
+/*   Updated: 2024/11/13 09:06:40 by vhacman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_put_num_converted(char num_converted)
+{
+	write(1, &num_converted);
+}
 void	ft_print_combination(int a, int b, int c)
 {
 	char	first_digit;
@@ -19,11 +23,11 @@ void	ft_print_combination(int a, int b, int c)
 	char	third_digit;
 
 	first_digit = a + '0';
-	write (1, &first_digit, 1);
 	second_digit = b + '0';
-	write (1, &second_digit, 1);
 	third_digit = c + '0';
-	write (1, &third_digit, 1);
+	ft_put_num_converted(first_digit);
+	ft_put_number_converted(second_digit);
+	ft_put_num_converted(third_digit);
 	if (!(first_digit == '7' && second_digit == '8' && third_digit == '9'))
 	{
 		write (1, ", ", 2);
