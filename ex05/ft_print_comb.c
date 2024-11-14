@@ -6,7 +6,7 @@
 /*   By: vhacman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:11:12 by vhacman           #+#    #+#             */
-/*   Updated: 2024/11/13 09:06:40 by vhacman          ###   ########.fr       */
+/*   Updated: 2024/11/14 09:27:18 by vhacman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_put_num_converted(char num_converted)
 {
-	write(1, &num_converted);
+	write(1, &num_converted, 1);
 }
-void	ft_print_combination(int a, int b, int c)
+
+void	ft_convert(int a, int b, int c)
 {
 	char	first_digit;
 	char	second_digit;
@@ -26,7 +27,7 @@ void	ft_print_combination(int a, int b, int c)
 	second_digit = b + '0';
 	third_digit = c + '0';
 	ft_put_num_converted(first_digit);
-	ft_put_number_converted(second_digit);
+	ft_put_num_converted(second_digit);
 	ft_put_num_converted(third_digit);
 	if (!(first_digit == '7' && second_digit == '8' && third_digit == '9'))
 	{
@@ -50,7 +51,7 @@ void	ft_print_comb(void)
 			c = b + 1;
 			while (c <= 9)
 			{
-				ft_print_combination(a, b, c);
+				ft_convert(a, b, c);
 				c++;
 			}
 			b++;
@@ -58,9 +59,9 @@ void	ft_print_comb(void)
 		a++;
 	}
 }
-
+/*
 int	main(void)
 {
 	ft_print_comb();
 	return (0);
-}
+}*/
